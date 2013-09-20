@@ -76,4 +76,13 @@ class replies {
 		return $coutput;
 	}
 }
+
+class comment {
+	function __construct($rev_id='', $rev_user='', $refresh=false){
+		$this->rev_id=$rev_id;
+		$this->rev_user=$rev_user;
+		$this->refresh=$refresh;
+	}
+	
+}
 ?>
