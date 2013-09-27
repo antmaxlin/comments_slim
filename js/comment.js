@@ -1,4 +1,11 @@
-// JavaScript Document
+/** Main comment javascript functions
+ * 
+ * Very simply, check for keystroke of <Enter> to trigger AJAX commit of comment.
+ * 
+ * Edit the appropriate php pages to your data structure.
+ * 
+ */
+ 
 //AJAX Class - Set url, divID, and queryString to use. Call with httpRequest.
 function AjaxCall() {
 	this.req = null;
@@ -68,7 +75,7 @@ function reply(e, id){
 		var ajax1 = new AjaxCall();
 		ajax1.divID="replies_"+id;
 		ajax1.queryString="id="+id+"&value="+value+"&level="+level+"&display="+display;
-		ajax1.url="/add_comment.php";
+		ajax1.url="./add_comment.php";
 		ajax1.httpRequest();
 	}
 }
@@ -78,7 +85,7 @@ function reply_delete(com_id, rev_id){
 	var ajax1 = new AjaxCall();
 	ajax1.divID="replies_"+rev_id;
 	ajax1.queryString="com_id="+com_id+"&rev_id="+rev_id+"&display="+display;
-	ajax1.url="/delete_comment.php";
+	ajax1.url="./delete_comment.php";
 	ajax1.httpRequest();
 }
 
@@ -86,6 +93,6 @@ function reply_all(rev_id, start){
 	var ajax1 = new AjaxCall();
 	ajax1.divID="replies_"+rev_id;
 	ajax1.queryString="rev_id="+rev_id+"&start="+start;
-	ajax1.url="/comment_all.php";
+	ajax1.url="./comment_all.php";
 	ajax1.httpRequest();
 }
